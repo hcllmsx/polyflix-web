@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://polyflix.sxrec.com/sitemap.xml
