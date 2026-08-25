@@ -110,11 +110,6 @@
       <div class="hero__inner">
         <p class="hero__eyebrow">开源 · 免费 · 跨平台</p>
         <h1 class="hero__title">把文件<span class="grad">藏进视频</span>，<br />让播放器<span class="grad">一眼认出</span>。</h1>
-        <p class="hero__sub">
-          <strong>影藏</strong> 把任意文件藏进一段能正常播放的 MP4；
-          <strong>影现播放器</strong>（PC 端 / 安卓移动端）自动识别，直接播放藏在里面的另一个视频。
-          无需改名、无需解压。
-        </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#download">下载全部</a>
           <a class="btn btn--ghost" href="#how">了解原理</a>
@@ -266,22 +261,41 @@
         <p>全部开源免费，基于 GPL-3.0 协议。</p>
       </div>
       <div class="download">
-        <a class="dl" href="https://github.com/hcllmsx/PolyFlix" target="_blank" rel="noopener">
+        <!-- 影藏 -->
+        <div class="dl dl--group">
           <img src="assets/img/yincang-logo.png" alt="影藏" class="dl__icon" />
           <span class="dl__name">影藏 PolyFlix</span>
           <span class="dl__meta">Windows · GPL-3.0</span>
-          <span class="dl__btn">GitHub 源码</span>
-        </a>
-        <div class="dl dl--group">
-          <img src="assets/img/player-logo-512px.png" alt="影现播放器" class="dl__icon" />
-          <span class="dl__name">影现播放器</span>
-          <span class="dl__meta">Windows / Android · GPL-3.0</span>
           <div class="dl__platforms">
-            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlixPlayer" target="_blank" rel="noopener">Windows 版</a>
-            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlixPlayer-Mobile" target="_blank" rel="noopener">Android 版</a>
+            <a class="dl__plat" href="https://pan.quark.cn/s/b6ad184e5647" target="_blank" rel="noopener">夸克网盘</a>
+            <a class="dl__plat" href="https://pan.baidu.com/s/5vOx8T2vgyeGVewN8Fk_UaA" target="_blank" rel="noopener">百度网盘</a>
+            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlix" target="_blank" rel="noopener">GitHub 源码</a>
+          </div>
+        </div>
+        <!-- 影现播放器 - Windows -->
+        <div class="dl dl--group">
+          <img src="assets/img/player-logo-512px.png" alt="影现播放器 PC" class="dl__icon" />
+          <span class="dl__name">影现播放器 · Windows</span>
+          <span class="dl__meta">GPL-3.0</span>
+          <div class="dl__platforms">
+            <a class="dl__plat" href="https://pan.quark.cn/s/7afb019a677e" target="_blank" rel="noopener">夸克网盘</a>
+            <a class="dl__plat" href="https://pan.baidu.com/s/5KVa4tfspcyYNTBfkP2MhiQ" target="_blank" rel="noopener">百度网盘</a>
+            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlixPlayer" target="_blank" rel="noopener">GitHub 源码</a>
+          </div>
+        </div>
+        <!-- 影现播放器 - 安卓 -->
+        <div class="dl dl--group">
+          <img src="assets/img/player-logo-192px.png" alt="影现播放器 安卓" class="dl__icon" />
+          <span class="dl__name">影现播放器 · 安卓</span>
+          <span class="dl__meta">GPL-3.0</span>
+          <div class="dl__platforms">
+            <a class="dl__plat" href="https://pan.quark.cn/s/9b2272e3f1f6" target="_blank" rel="noopener">夸克网盘</a>
+            <a class="dl__plat" href="https://pan.baidu.com/s/5EuqZZphFAXz5yZOSi8rfXg" target="_blank" rel="noopener">百度网盘</a>
+            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlixPlayer-Mobile" target="_blank" rel="noopener">GitHub 源码</a>
           </div>
         </div>
       </div>
+      <p class="download__tip">温馨提示：下载网盘文件时，建议先转存到自己的网盘再下载，谢谢支持。</p>
     </section>
 
     <!-- ===================== FAQ ===================== -->
@@ -290,6 +304,11 @@
         <h2>常见问题</h2>
       </div>
       <div class="faq">
+        <details class="faq__item" open="">
+          <summary>影藏生成的 MP4 经过转码或重新压制后，还能被识别出来吗？</summary>
+          <p>不能。影藏产物依赖原始字节结构来同时伪装成 MP4 与 ZIP，一旦被转码、二次压制、改变封装或重新上传（多数平台会重新编码），隐藏数据就会遭到破坏，影现播放器将无法再识别。请始终保留原始的 <code>polyglot.mp4</code> 文件来播放或导出隐藏内容。</p>
+          <p class="faq__warn">鉴于此，操作前请务必谨慎备份，避免因转码导致隐藏内容永久丢失；由此造成的数据损失，作者恕不负责。</p>
+        </details>
         <details class="faq__item">
           <summary>影藏出来的文件真的能正常播放吗？</summary>
           <p>是的。通过影藏的“双视频”模式构建出的 <code>polyglot.mp4</code> 是合法 MP4，用任何普通播放器双击都能正常播放伪装视频；只有用影现播放器才会“现”出藏在里面的内容。</p>

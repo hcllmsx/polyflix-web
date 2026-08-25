@@ -133,7 +133,7 @@ img { max-width: 100%; display: block; }
 }
 .hero__sub { margin: 22px auto 30px; max-width: 680px; color: var(--text-dim); font-size: 17px; }
 .hero__sub strong { color: var(--text); }
-.hero__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 44px; }
 .hero__badges { margin-top: 34px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .badge {
   font-size: 13px; color: var(--text-dim);
@@ -229,7 +229,13 @@ img { max-width: 100%; display: block; }
 .step__hint { position: relative; z-index: 1; font-size: 13px; color: var(--text-dim); opacity: .8; margin-top: 4px; }
 
 /* ===================== 下载 ===================== */
-.download { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.download { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.download__tip {
+  max-width: 760px; margin: 28px auto 0; padding: 12px 18px;
+  text-align: center; color: #c7ecd2; font-size: 14px; font-weight: 600;
+  border: 1px solid rgba(52, 224, 196, .35); border-radius: 10px;
+  background: rgba(52, 224, 196, .08);
+}
 .dl {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 28px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px;
@@ -268,6 +274,10 @@ img { max-width: 100%; display: block; }
 .faq__item[open] summary::after { content: "−"; }
 .faq__item p { color: var(--text-dim); padding: 0 0 18px; font-size: 15px; }
 .faq__item code { background: var(--surface-2); padding: 1px 6px; border-radius: 6px; font-size: 13px; }
+.faq__item .faq__warn {
+  margin: 8px 0 18px; padding: 0;
+  color: #f0d9a8; font-size: 14px; font-weight: 500; letter-spacing: .2px;
+}
 
 /* ===================== 页脚 ===================== */
 .footer { background: #070a12; border-top: 1px solid var(--border); padding: 40px 24px; }
