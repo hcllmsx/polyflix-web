@@ -87,18 +87,23 @@
         <img src="assets/img/yincang-logo.png" alt="影藏 PolyFlix 标志" class="nav__logo" />
         <span>PolyFlix 系列</span>
       </a>
-      <nav class="nav__links" aria-label="主导航">
+      <span class="nav__author">作者：火车啦啦 · <a href="https://space.bilibili.com/255947051" target="_blank" rel="noopener">bilibili ↗</a></span>
+      <nav class="nav__links" id="navLinks" aria-label="主导航">
         <a href="#yincang">影藏</a>
         <div class="nav__dropdown">
-          <button class="nav__dropbtn" aria-haspopup="true" aria-expanded="false">影现播放器 <span class="caret">▾</span></button>
+          <button class="nav__dropbtn" data-target="#player" aria-haspopup="true" aria-expanded="false">影现播放器 <span class="caret">▾</span></button>
           <div class="nav__menu" role="menu">
             <a href="#player-pc" role="menuitem">Windows 版</a>
             <a href="#player-mobile" role="menuitem">Android 版</a>
           </div>
         </div>
         <a href="#how">工作原理</a>
+        <a class="nav__bili-mobile" href="https://space.bilibili.com/255947051" target="_blank" rel="noopener">作者：火车啦啦 · bilibili ↗</a>
       </nav>
       <a class="btn btn--ghost nav__cta" href="#download">立即获取</a>
+      <button class="nav__burger" id="navBurger" aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
@@ -126,7 +131,7 @@
     <!-- ===================== 产品总览 ===================== -->
     <section class="section" id="products">
       <div class="section__head">
-        <h2>一套组合，两类软件</h2>
+        <h2>影藏与影现，各司其职</h2>
         <p>「影藏」负责把东西藏起来，「影现播放器」负责把它认出来 —— 它们是天生的姊妹项目。影现播放器同时提供 Windows 与 Android 两个版本。</p>
       </div>
       <div class="cards cards--two">
@@ -182,7 +187,6 @@
     <!-- ===================== 影现播放器（PC + 安卓） ===================== -->
     <section class="section" id="player">
       <div class="section__head">
-        <p class="pill" style="display:inline-block">万能播放器</p>
         <h2>影现播放器</h2>
         <p>一个“会识别自己人”的万能视频播放器。拖入影藏产物即自动播放藏在里面的视频，提供 Windows 与 Android 两个版本。</p>
       </div>
@@ -333,7 +337,6 @@
         <img src="assets/img/yincang-logo.png" alt="影藏 PolyFlix" class="footer__logo" />
         <span>PolyFlix 系列 · 影藏 & 影现</span>
       </div>
-      <p class="footer__author">作者：火车啦啦 · <a href="https://space.bilibili.com/255947051" target="_blank" rel="noopener">bilibili ↗</a></p>
       <p class="footer__copy">© 2026 <a href="https://github.com/hcllmsx" target="_blank" rel="noopener">hcllmsx</a> · 基于 GPL-3.0 开源协议 · 请勿用于非法用途</p>
     </div>
   </footer>

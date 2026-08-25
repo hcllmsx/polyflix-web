@@ -11,15 +11,19 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  // 下拉菜单：点击按钮切换展开（键盘/移动端友好），点击外部关闭
+  // 下拉菜单：点击主按钮跳转到万能播放器区块；子菜单项（Windows/Android）可点开
   const dropdowns = document.querySelectorAll(".nav__dropdown");
   dropdowns.forEach((dd) => {
     const btn = dd.querySelector(".nav__dropbtn");
     const menu = dd.querySelector(".nav__menu");
     btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const open = dd.classList.toggle("is-open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      // 桌面端 hover 已能展开子菜单；点击按钮本身跳转到对应区块
+      const target = btn.getAttribute("data-target");
+      if (target) {
+        e.preventDefault();
+        const el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
     });
     // 点击菜单项后关闭
     menu.querySelectorAll("a").forEach((a) =>
@@ -35,6 +39,35 @@
       dd.querySelector(".nav__dropbtn").setAttribute("aria-expanded", "false");
     });
   });
+
+  // 汉堡菜单：移动端展开/收起导航
+  const burger = document.getElementById("navBurger");
+  const navLinks = document.getElementById("navLinks");
+  if (burger && navLinks) {
+    burger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = navLinks.classList.toggle("is-open");
+      burger.classList.toggle("is-open", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
+    });
+    // 点击菜单内任意链接后收起
+    navLinks.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+        burger.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+      })
+    );
+    // 点击菜单外部收起
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !burger.contains(e.target)) {
+        navLinks.classList.remove("is-open");
+        burger.classList.remove("is-open");
+        burger.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
 
   // 进场动画：观察 .section / .card / .split / .sub 元素
   const targets = document.querySelectorAll(".section, .card, .split, .step, .dl, .sub");
