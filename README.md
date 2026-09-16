@@ -5,9 +5,7 @@
 ## 产品（两类）
 
 - **影藏 PolyFlix** — 把文件藏进能正常播放的 MP4（多态文件）。[GitHub](https://github.com/hcllmsx/PolyFlix)
-- **影现播放器** — “会识别自己人”的万能视频播放器，自动识别双视频。包含两个版本：
-  - **Windows 版**：基于 libmpv 的桌面播放器。[GitHub](https://github.com/hcllmsx/PolyFlixPlayer)
-  - **Android 版**：基于 Flutter + media_kit 的移动播放器。[GitHub](https://github.com/hcllmsx/PolyFlixPlayer-Mobile)
+- **影现播放器** — “会识别自己人”的万能视频播放器，自动识别双视频。基于 Flutter + media_kit（libmpv 内核），同一仓库支持 Windows 与 Android：[GitHub](https://github.com/hcllmsx/PolyFlixPlayer)
 
 ## 目录结构
 
@@ -31,7 +29,7 @@ polyflix-web/
 - `<title>` / `description` / `keywords` / `author` / `canonical`
 - Open Graph（og:title / og:description / og:image / og:url 等）
 - Twitter Card
-- 3 段 JSON-LD 结构化数据（SoftwareApplication）
+- 2 段 JSON-LD 结构化数据（SoftwareApplication：影藏 + 影现播放器）
 - `robots.txt` + `sitemap.xml`
 
 > 站点域名：`https://polyflix.sxrec.com/`（已填写于 `index.html` 的 canonical / og:url / og:image / twitter:image，以及 `sitemap.xml` 与 `robots.txt`）。

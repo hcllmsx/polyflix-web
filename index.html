@@ -52,24 +52,10 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "影现播放器 PolyFlixPlayer",
-    "operatingSystem": "Windows",
+    "operatingSystem": "Windows, Android",
     "applicationCategory": "MultimediaApplication",
-    "description": "基于 libmpv 的万能视频播放器，能自动识别并直接播放影藏多态视频中隐藏的视频。",
+    "description": "基于 Flutter + media_kit（libmpv 内核）的跨平台万能视频播放器，支持 Windows 与 Android，能自动识别并直接播放影藏多态视频中隐藏的视频。",
     "url": "https://github.com/hcllmsx/PolyFlixPlayer",
-    "author": { "@type": "Person", "name": "hcllmsx" },
-    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "影现播放器移动端 PolyFlixPlayer-Mobile",
-    "operatingSystem": "Android",
-    "applicationCategory": "MultimediaApplication",
-    "description": "基于 Flutter + media_kit 的安卓万能视频播放器，智能识别并播放影藏多态视频中隐藏的视频。",
-    "url": "https://github.com/hcllmsx/PolyFlixPlayer-Mobile",
     "author": { "@type": "Person", "name": "hcllmsx" },
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" }
@@ -154,8 +140,8 @@
           <p class="card__tag">万能播放器 · Windows / Android</p>
           <p>一个“会识别自己人”的万能视频播放器，拖入影藏产物即自动播放藏在里面的视频。提供两个版本：</p>
           <ul class="card__list">
-            <li><strong>Windows 版</strong>：基于 libmpv，全格式 + 倍速/增益音量/进度缩略图</li>
-            <li><strong>Android 版</strong>：基于 Flutter + media_kit，手机上也能识别双视频</li>
+            <li><strong>Windows 版</strong>：media_kit（libmpv 内核），全格式 + 音轨/字幕切换、拖放换片、键盘快捷键</li>
+            <li><strong>Android 版</strong>：同一套 Flutter + media_kit，手机上也能识别双视频</li>
             <li>两者都能一键导出隐藏视频，无需改名/解压</li>
           </ul>
           <a class="btn btn--soft" href="#player-pc">查看详情</a>
@@ -196,13 +182,14 @@
         <div class="split split--reverse">
           <div class="split__text">
             <p class="pill">Windows 版</p>
-            <h3>影现播放器 PolyFlixPlayer（PC 端）</h3>
-            <p class="lead">基于 libmpv 的桌面万能播放器。</p>
+            <h3>影现播放器 PolyFlixPlayer（Windows）</h3>
+            <p class="lead">基于 Flutter + media_kit（libmpv 内核）的桌面万能播放器。</p>
             <ul class="feat">
-              <li><strong>普通视频</strong>：直接播放。libmpv（ffmpeg）内核，全格式通吃。</li>
+              <li><strong>普通视频</strong>：直接播放。libmpv（FFmpeg）内核，全格式通吃，支持硬件加速。</li>
               <li><strong>影藏产物</strong>：拖进来自动识别并播放<strong>藏在里面的那个视频</strong>——无需改名、无需解压。</li>
               <li>别人双击这个文件，用普通播放器看到的只是一段正常视频。</li>
-              <li>底部控制条：播放、进度条、时间、导出隐藏视频、音量、倍速。</li>
+              <li>倍速调节、音轨 / 字幕切换、音量控制，支持拖放换片与键盘快捷键（空格 / ←→ / M / Esc）。</li>
+              <li>可将隐藏视频一键导出保存。</li>
             </ul>
             <a class="btn btn--primary" href="#download">下载 PC 端</a>
           </div>
@@ -218,7 +205,7 @@
           <div class="split__text">
             <p class="pill">Android 版</p>
             <h3>影现播放器移动端（安卓）</h3>
-            <p class="lead">基于 Flutter 的跨平台移动万能播放器。</p>
+            <p class="lead">与 Windows 版同一套 Flutter + media_kit（libmpv 内核）。</p>
             <ul class="feat">
               <li><strong>万能格式播放</strong>：内置 media_kit（libmpv / FFmpeg），通吃 MP4、MKV、MOV、FLV、WebM、AVI、TS。</li>
               <li><strong>智能识别双视频</strong>：导入时自动嗅探 PFLX 标识，瞬间识别隐藏内容；无需重命名、解压即可解码播放。</li>
@@ -295,7 +282,7 @@
           <div class="dl__platforms">
             <a class="dl__plat" href="https://pan.quark.cn/s/9b2272e3f1f6" target="_blank" rel="noopener">夸克网盘</a>
             <a class="dl__plat" href="https://pan.baidu.com/s/5EuqZZphFAXz5yZOSi8rfXg" target="_blank" rel="noopener">百度网盘</a>
-            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlixPlayer-Mobile" target="_blank" rel="noopener">GitHub 源码</a>
+            <a class="dl__plat" href="https://github.com/hcllmsx/PolyFlixPlayer" target="_blank" rel="noopener">GitHub 源码</a>
           </div>
         </div>
       </div>
@@ -318,8 +305,8 @@
           <p>是的。通过影藏的“双视频”模式构建出的 <code>polyglot.mp4</code> 是合法 MP4，用任何普通播放器双击都能正常播放伪装视频；只有用影现播放器才会“现”出藏在里面的内容。</p>
         </details>
         <details class="faq__item">
-          <summary>安卓端支持哪些格式？</summary>
-          <p>基于 media_kit（libmpv / FFmpeg），通吃 MP4、MKV、MOV、FLV、WebM、AVI、TS 等主流格式，并能智能识别影藏双视频。</p>
+          <summary>影现播放器支持哪些格式？</summary>
+          <p>Windows 与 Android 版均基于 media_kit（libmpv / FFmpeg），通吃 MP4、MKV、MOV、FLV、WebM、AVI、TS 等主流格式，并能智能识别影藏双视频。</p>
         </details>
         <details class="faq__item">
           <summary>这些软件收费吗？</summary>
