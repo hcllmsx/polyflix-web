@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ===================== SEO 基础信息 ===================== -->
-  <title>影藏 & 影现播放器 | 把文件藏进视频，一键识别播放 — PolyFlix 系列</title>
-  <meta name="description" content="影藏 PolyFlix 把任意文件藏进一段能正常播放的 MP4 视频里；影现播放器（PC 端 / 安卓移动端）能自动识别并直接播放藏在视频里的另一个视频。开源、免费、跨平台，无需改名、无需解压。" />
-  <meta name="keywords" content="影藏,影现播放器,PolyFlix,PolyFlixPlayer,多态文件,polyglot,文件隐写,视频隐写,MP4藏文件,隐藏视频播放器,安卓视频播放器,PC视频播放器,libmpv,Flutter,文件伪装" />
+  <title>影藏 & 影现播放器 | 把文件藏进视频，一键识别播放 · 本地 AI 语音识别与字幕翻译 — PolyFlix 系列</title>
+  <meta name="description" content="影藏 PolyFlix 把任意文件藏进一段能正常播放的 MP4 视频里；影现播放器（PC 端 / 安卓移动端）能自动识别并直接播放藏在视频里的另一个视频，并深度集成本地离线 AI 语音转录字幕、大模型智能翻译与双语字幕对照。开源、免费、跨平台，无需改名、无需解压。" />
+  <meta name="keywords" content="影藏,影现播放器,PolyFlix,PolyFlixPlayer,多态文件,polyglot,文件隐写,视频隐写,MP4藏文件,隐藏视频播放器,安卓视频播放器,PC视频播放器,libmpv,Flutter,文件伪装,AI字幕,语音转录,Whisper,字幕翻译,双语字幕,大模型翻译" />
   <meta name="author" content="hcllmsx" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b0f1a" />
@@ -16,8 +16,8 @@
   <!-- ===================== Open Graph / 社交分享 ===================== -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="影藏 & 影现播放器" />
-  <meta property="og:title" content="影藏 & 影现播放器 | 把文件藏进视频，一键识别播放" />
-  <meta property="og:description" content="影藏：把文件藏进能正常播放的 MP4。影现播放器：自动识别并播放藏在视频里的另一个视频。开源免费，PC 端与安卓端均可使用。" />
+  <meta property="og:title" content="影藏 & 影现播放器 | 把文件藏进视频，一键识别播放 · 本地 AI 字幕与大模型翻译" />
+  <meta property="og:description" content="影藏：把文件藏进能正常播放的 MP4。影现播放器：自动识别并播放隐藏视频，支持本地离线 AI 语音转录与大模型双语字幕翻译。开源免费，PC 端与安卓端均可使用。" />
   <meta property="og:url" content="https://polyflix.sxrec.com/" />
   <meta property="og:image" content="https://polyflix.sxrec.com/assets/img/og-cover.png" />
   <meta property="og:locale" content="zh_CN" />
@@ -25,7 +25,7 @@
   <!-- ===================== Twitter Card ===================== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="影藏 & 影现播放器 | 把文件藏进视频，一键识别播放" />
-  <meta name="twitter:description" content="影藏把文件藏进能正常播放的 MP4，影现播放器自动识别并播放隐藏视频。开源免费，跨平台。" />
+  <meta name="twitter:description" content="影藏把文件藏进能正常播放的 MP4，影现播放器自动识别并播放隐藏视频，集成本地 AI 语音字幕与大模型翻译。开源免费，跨平台。" />
   <meta name="twitter:image" content="https://polyflix.sxrec.com/assets/img/og-cover.png" />
 
   <!-- ===================== 图标 ===================== -->
@@ -54,7 +54,7 @@
     "name": "影现播放器 PolyFlixPlayer",
     "operatingSystem": "Windows, Android",
     "applicationCategory": "MultimediaApplication",
-    "description": "基于 Flutter + media_kit（libmpv 内核）的跨平台万能视频播放器，支持 Windows 与 Android，能自动识别并直接播放影藏多态视频中隐藏的视频。",
+    "description": "基于 Flutter + media_kit（libmpv 内核）的跨平台万能视频播放器，支持 Windows 与 Android，能自动识别并直接播放影藏多态视频中隐藏的视频，并深度集成本地离线 AI 语音转录字幕、大模型智能翻译与双语字幕对照功能。",
     "url": "https://github.com/hcllmsx/PolyFlixPlayer",
     "author": { "@type": "Person", "name": "hcllmsx" },
     "license": "https://www.gnu.org/licenses/gpl-3.0.html",
@@ -110,6 +110,7 @@
           <span class="badge">多态文件技术</span>
           <span class="badge">Windows / Android</span>
           <span class="badge">libmpv 内核</span>
+          <span class="badge">离线 AI 字幕 / 大模型翻译</span>
         </div>
       </div>
     </section>
@@ -138,11 +139,12 @@
           <img src="assets/img/player-logo-512px.png" alt="影现播放器标志" class="card__logo" />
           <h3>影现播放器</h3>
           <p class="card__tag">万能播放器 · Windows / Android</p>
-          <p>一个“会识别自己人”的万能视频播放器，拖入影藏产物即自动播放藏在里面的视频。提供两个版本：</p>
+          <p>一个“会识别自己人”的万能视频播放器，拖入影藏产物即自动播放隐藏视频，并深度集成离线 AI 语音转录与大模型字幕翻译：</p>
           <ul class="card__list">
-            <li><strong>Windows 版</strong>：media_kit（libmpv 内核），全格式 + 音轨/字幕切换、拖放换片、键盘快捷键</li>
-            <li><strong>Android 版</strong>：同一套 Flutter + media_kit，手机上也能识别双视频</li>
-            <li>两者都能一键导出隐藏视频，无需改名/解压</li>
+            <li><strong>万能播放与双视频识别</strong>：libmpv 内核，全格式通吃，自动嗅探隐藏内容一键导出</li>
+            <li><strong>离线 AI 语音转录</strong>：基于 Whisper，33 种模型可选，支持 GPU / CPU 双引擎加速</li>
+            <li><strong>大模型智能翻译</strong>：集成百度大模型 / 传统 NMT 与 Azure 翻译，双语对照同屏显示与 SRT 导出</li>
+            <li><strong>双端深度体验</strong>：Windows 快捷键与拖放换片，Android 横竖屏自适应与沉浸全屏</li>
           </ul>
           <a class="btn btn--soft" href="#player-pc">查看详情</a>
         </article>
@@ -174,7 +176,7 @@
     <section class="section" id="player">
       <div class="section__head">
         <h2>影现播放器</h2>
-        <p>一个“会识别自己人”的万能视频播放器。拖入影藏产物即自动播放藏在里面的视频，提供 Windows 与 Android 两个版本。</p>
+        <p>一个“会识别自己人”的万能视频播放器，兼具本地离线 AI 语音识别、大模型字幕翻译与双视频自动识别能力。提供 Windows 与 Android 两个版本。</p>
       </div>
 
       <!-- 子区块：Windows 版 -->
@@ -183,13 +185,14 @@
           <div class="split__text">
             <p class="pill">Windows 版</p>
             <h3>影现播放器 PolyFlixPlayer（Windows）</h3>
-            <p class="lead">基于 Flutter + media_kit（libmpv 内核）的桌面万能播放器。</p>
+            <p class="lead">基于 Flutter + media_kit（libmpv 内核）的桌面万能播放器与离线 AI 字幕工作站。</p>
             <ul class="feat">
-              <li><strong>普通视频</strong>：直接播放。libmpv（FFmpeg）内核，全格式通吃，支持硬件加速。</li>
-              <li><strong>影藏产物</strong>：拖进来自动识别并播放<strong>藏在里面的那个视频</strong>——无需改名、无需解压。</li>
-              <li>别人双击这个文件，用普通播放器看到的只是一段正常视频。</li>
-              <li>倍速调节、音轨 / 字幕切换、音量控制，支持拖放换片与键盘快捷键（空格 / ←→ / M / Esc）。</li>
-              <li>可将隐藏视频一键导出保存。</li>
+              <li><strong>普通视频通吃</strong>：libmpv（FFmpeg）内核，MP4/MKV/FLV 等全格式硬解加速播放。</li>
+              <li><strong>影藏产物秒开</strong>：拖进来自动识别并播放<strong>藏在里面的那个视频</strong>——无需改名、无需解压，支持一键提取导出。</li>
+              <li><strong>本地离线 AI 语音转录</strong>：基于 Whisper 实现完全本地化音频识别与时间戳对齐，无需联网保护隐私；支持导入 whisper.cpp 官方预编译 GPU 引擎包（CUDA 12.4 / 11.8 等），极速生成字幕。</li>
+              <li><strong>大模型与多引擎字幕翻译</strong>：集成百度大模型（LLM）与传统（NMT）双模式（智能提炼片名辅助语义上下文）及 Azure 翻译；支持原语/译语双行同屏对照与一键导出标准 SRT。</li>
+              <li><strong>后台 AI 任务流水线</strong>：支持后台异步转录与“转录完成自动预约翻译”一体化处理，主页实时跟踪进度。</li>
+              <li>倍速调节、多音轨 / 多字幕切换、音量记忆、快捷键控制（空格 / ←→ / M / Esc）与拖放换片。</li>
             </ul>
             <a class="btn btn--primary" href="#download">下载 PC 端</a>
           </div>
@@ -205,11 +208,12 @@
           <div class="split__text">
             <p class="pill">Android 版</p>
             <h3>影现播放器移动端（安卓）</h3>
-            <p class="lead">与 Windows 版同一套 Flutter + media_kit（libmpv 内核）。</p>
+            <p class="lead">与 Windows 版同一套 Flutter + media_kit（libmpv 内核），移动端同样支持 AI 智能语音字幕。</p>
             <ul class="feat">
-              <li><strong>万能格式播放</strong>：内置 media_kit（libmpv / FFmpeg），通吃 MP4、MKV、MOV、FLV、WebM、AVI、TS。</li>
-              <li><strong>智能识别双视频</strong>：导入时自动嗅探 PFLX 标识，瞬间识别隐藏内容；无需重命名、解压即可解码播放。</li>
-              <li><strong>一键提取与导出</strong>：将隐藏视频一键导出至手机本地或自定义文件夹。</li>
+              <li><strong>万能格式播放</strong>：内置 media_kit（libmpv / FFmpeg），通吃主流格式，支持硬件解码。</li>
+              <li><strong>智能识别双视频</strong>：导入时自动嗅探 PFLX 标识，瞬间识别隐藏内容；一键导出至本地目录。</li>
+              <li><strong>移动端 AI 语音转录与翻译</strong>：手机上也能进行 Whisper 本地语音识别与大模型字幕翻译，支持后台任务管理与双语字幕同屏对照。</li>
+              <li><strong>触控与视口优化</strong>：横竖屏旋转自适应、低高度屏幕弹窗防溢出设计、沉浸式全屏手势控制。</li>
             </ul>
             <a class="btn btn--primary" href="#download">下载安卓端</a>
           </div>
@@ -307,6 +311,10 @@
         <details class="faq__item">
           <summary>影现播放器支持哪些格式？</summary>
           <p>Windows 与 Android 版均基于 media_kit（libmpv / FFmpeg），通吃 MP4、MKV、MOV、FLV、WebM、AVI、TS 等主流格式，并能智能识别影藏双视频。</p>
+        </details>
+        <details class="faq__item">
+          <summary>AI 语音识别与字幕翻译需要收费或联网吗？</summary>
+          <p><strong>语音识别完全免费且纯本地离线运行</strong>：基于本地 Whisper 模型，全程在你的电脑或手机本地计算，完全不消耗流量、无需联网、绝不上传音视频保护隐私；<br /><strong>字幕翻译</strong>：若开启百度翻译（大模型/传统模式）或 Azure 翻译，需在设置中填入你在对应开放平台申请的 API 凭据，各大平台均提供免费调用额度（例如百度翻译每月均有大量字符免费额度），播放器自身永久免费开源。</p>
         </details>
         <details class="faq__item">
           <summary>这些软件收费吗？</summary>

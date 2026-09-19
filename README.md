@@ -5,7 +5,7 @@
 ## 产品（两类）
 
 - **影藏 PolyFlix** — 把文件藏进能正常播放的 MP4（多态文件）。[GitHub](https://github.com/hcllmsx/PolyFlix)
-- **影现播放器** — “会识别自己人”的万能视频播放器，自动识别双视频。基于 Flutter + media_kit（libmpv 内核），同一仓库支持 Windows 与 Android：[GitHub](https://github.com/hcllmsx/PolyFlixPlayer)
+- **影现播放器** — “会识别自己人”的万能视频播放器，支持自动识别双视频，并深度集成本地离线 AI 语音转录字幕、大模型智能翻译与双语字幕对照。基于 Flutter + media_kit（libmpv 内核），同一仓库支持 Windows 与 Android：[GitHub](https://github.com/hcllmsx/PolyFlixPlayer)
 
 ## 目录结构
 
