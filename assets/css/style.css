@@ -16,6 +16,8 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+/* 移动端点击反馈：去掉浏览器默认的蓝色高亮块（点菜单按钮 / 常见问题时会闪一下） */
+a, button, summary { -webkit-tap-highlight-color: transparent; }
 
 html { scroll-behavior: smooth; }
 
@@ -192,7 +194,7 @@ img { max-width: 100%; display: block; }
 /* ===================== 分栏布局 ===================== */
 .split {
   max-width: var(--maxw); margin: 0 auto;
-  display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center;
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: center;
 }
 .split--reverse .split__media { order: -1; }
 .split__text .pill {
@@ -211,9 +213,9 @@ img { max-width: 100%; display: block; }
 .feat { list-style: none; display: grid; gap: 12px; margin: 6px 0 22px; }
 .feat li { position: relative; padding-left: 26px; color: var(--text-dim); font-size: 15.5px; }
 .feat li::before { content: "▹"; position: absolute; left: 0; color: var(--primary-2); font-weight: 700; font-size: 18px; top: -1px; }
-.split__media { display: flex; justify-content: center; }
+.split__media { display: flex; justify-content: center; min-width: 0; }
 .showcase {
-  width: 100%; max-width: 340px; border-radius: 22px;
+  width: min(100%, 340px); height: auto; border-radius: 22px;
   background: linear-gradient(160deg, var(--surface-2), var(--surface));
   border: 1px solid var(--border); padding: 28px; box-shadow: var(--shadow);
 }
@@ -274,6 +276,17 @@ img { max-width: 100%; display: block; }
   transition: background .2s, border-color .2s;
 }
 .dl__plat:hover { background: #243056; border-color: rgba(108,140,255,.5); }
+/* AI 字幕资源（语音模型 / 识别引擎）下载块 */
+.dl-res {
+  max-width: var(--maxw); margin: 26px auto 0;
+  padding: 20px 24px; border-radius: var(--radius);
+  border: 1px dashed rgba(108,140,255,.35); background: rgba(108,140,255,.06);
+}
+.dl-res__head { text-align: center; font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+.dl-res__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.dl-res__item { text-align: center; }
+.dl-res__name { font-size: 15px; font-weight: 600; }
+.dl-res__desc { color: var(--text-dim); font-size: 13.5px; margin: 6px 0 2px; }
 
 /* ===================== 影现播放器子区块 ===================== */
 .sub { padding: 16px 0; }
@@ -303,6 +316,7 @@ img { max-width: 100%; display: block; }
 .footer__links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; color: var(--text-dim); font-size: 14px; }
 .footer__links a:hover { color: var(--text); }
 .footer__copy { color: var(--text-dim); font-size: 13px; }
+.footer__legal::before { content: "·"; margin: 0 6px; }
 .footer__copy a { color: var(--primary); font-weight: 600; transition: color .2s; }
 .footer__copy a:hover { color: var(--accent); }
 .footer__author { color: var(--text-dim); font-size: 14px; }
@@ -314,8 +328,8 @@ img { max-width: 100%; display: block; }
 
 /* ===================== 响应式 ===================== */
 @media (max-width: 920px) {
-  .cards, .cards--two, .steps, .download { grid-template-columns: 1fr; }
-  .split, .split--reverse { grid-template-columns: 1fr; gap: 32px; }
+  .cards, .cards--two, .steps, .download, .dl-res__grid { grid-template-columns: 1fr; }
+  .split, .split--reverse { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .split--reverse .split__media { order: 0; }
   .nav__author { display: none; }
   .nav__burger { display: flex; }
@@ -349,4 +363,7 @@ img { max-width: 100%; display: block; }
   .hero { padding: 64px 18px 56px; }
   .section { padding: 60px 18px; }
   .nav__cta { display: none; }
+  /* 手机端：版权信息与「开源协议 · 请勿用于…」分两行 */
+  .footer__legal { display: block; margin-top: 6px; }
+  .footer__legal::before { content: none; margin: 0; }
 }
