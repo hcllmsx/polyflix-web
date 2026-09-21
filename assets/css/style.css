@@ -78,7 +78,7 @@ img { max-width: 100%; display: block; }
 .nav__author { margin-left: 18px; font-size: 13px; color: var(--text-dim); white-space: nowrap; }
 .nav__author a { color: var(--primary); font-weight: 600; transition: color .2s; }
 .nav__author a:hover { color: var(--accent); }
-.nav__logo { width: 34px; height: 34px; border-radius: 9px; }
+.nav__logo { width: 34px; height: 34px; border-radius: 9px; object-fit: contain; }
 .nav__links { display: flex; gap: 22px; margin-left: auto; font-size: 15px; color: var(--text-dim); align-items: center; }
 .nav__links a { transition: color .2s; }
 .nav__links a:hover { color: var(--text); }
@@ -299,7 +299,7 @@ img { max-width: 100%; display: block; }
 .footer { background: #070a12; border-top: 1px solid var(--border); padding: 40px 24px; }
 .footer__inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
 .footer__brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
-.footer__logo { width: 30px; height: 30px; border-radius: 8px; }
+.footer__logo { width: 30px; height: 30px; border-radius: 8px; object-fit: contain; }
 .footer__links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; color: var(--text-dim); font-size: 14px; }
 .footer__links a:hover { color: var(--text); }
 .footer__copy { color: var(--text-dim); font-size: 13px; }
