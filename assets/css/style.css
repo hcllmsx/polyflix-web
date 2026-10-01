@@ -276,6 +276,22 @@ img { max-width: 100%; display: block; }
   transition: background .2s, border-color .2s;
 }
 .dl__plat:hover { background: #243056; border-color: rgba(108,140,255,.5); }
+/* 网盘二维码：悬停按钮弹出原尺寸二维码（扫码用） */
+.dl__qrwrap { position: relative; display: inline-flex; }
+.dl__qr {
+  position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%) translateY(4px);
+  width: 261px; height: 300px; max-width: none; display: block;
+  border-radius: 10px; border: 1px solid var(--border); background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.45);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .18s, transform .18s;
+  z-index: 20;
+}
+.dl__qrwrap:hover .dl__qr, .dl__qrwrap:focus-within .dl__qr {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+/* 网盘按钮仅为悬停触发二维码，不可点击 */
+.dl__qrwrap .dl__plat { cursor: default; }
 /* AI 字幕资源（语音模型 / 识别引擎）下载块 */
 .dl-res {
   max-width: var(--maxw); margin: 26px auto 0;
