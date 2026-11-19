@@ -324,6 +324,35 @@ img { max-width: 100%; display: block; }
   color: #f0d9a8; font-size: 14px; font-weight: 500; letter-spacing: .2px;
 }
 
+/* ===================== 赞助鸣谢 ===================== */
+.sponsors {
+  max-width: 820px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+}
+.sponsor {
+  min-width: 240px; padding: 16px 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  border: 1px solid rgba(240, 217, 168, .25); border-radius: 14px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.sponsor:hover {
+  transform: translateY(-3px);
+  border-color: rgba(240, 217, 168, .5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+.sponsor__info { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.sponsor__name { font-size: 16px; font-weight: 700; color: var(--text); }
+.sponsor__source {
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  background: rgba(52, 224, 196, .1); border: 1px solid rgba(52, 224, 196, .28);
+  padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+}
+.sponsor__amount {
+  font-size: 16px; font-weight: 700; color: #f0d9a8;
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+
 /* ===================== 页脚 ===================== */
 .footer { background: #070a12; border-top: 1px solid var(--border); padding: 40px 24px; }
 .footer__inner { max-width: var(--maxw); margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
@@ -340,7 +369,7 @@ img { max-width: 100%; display: block; }
 .footer__author a:hover { color: var(--accent); }
 
 /* 锚点跳转时为固定页眉留出空间 */
-#yincang, #player-pc, #player-mobile, #how, #download { scroll-margin-top: 84px; }
+#yincang, #player-pc, #player-mobile, #how, #download, #sponsors { scroll-margin-top: 84px; }
 
 /* ===================== 响应式 ===================== */
 @media (max-width: 920px) {
@@ -379,6 +408,7 @@ img { max-width: 100%; display: block; }
   .hero { padding: 64px 18px 56px; }
   .section { padding: 60px 18px; }
   .nav__cta { display: none; }
+  .sponsor { width: 100%; }
   /* 手机端：版权信息与「开源协议 · 请勿用于…」分两行 */
   .footer__legal { display: block; margin-top: 6px; }
   .footer__legal::before { content: none; margin: 0; }
