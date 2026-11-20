@@ -2,6 +2,25 @@
 (function () {
   "use strict";
 
+  // 滚动条自动隐藏（滚动时 / 鼠标靠近右边缘 18px 显现）
+  let scrollBarTimer = null;
+  const rootEl = document.documentElement;
+  window.addEventListener("scroll", () => {
+    rootEl.classList.add("is-scrolling");
+    if (scrollBarTimer) clearTimeout(scrollBarTimer);
+    scrollBarTimer = setTimeout(() => rootEl.classList.remove("is-scrolling"), 800);
+  }, { passive: true });
+  window.addEventListener("mousemove", (e) => {
+    if (window.innerWidth - e.clientX <= 18) {
+      rootEl.classList.add("near-scrollbar");
+    } else {
+      rootEl.classList.remove("near-scrollbar");
+    }
+  }, { passive: true });
+  window.addEventListener("mouseleave", () => {
+    rootEl.classList.remove("near-scrollbar");
+  });
+
   // 滚动时给导航添加边框阴影
   const nav = document.getElementById("nav");
   const onScroll = () => {

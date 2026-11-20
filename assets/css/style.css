@@ -15,11 +15,46 @@
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
 /* 移动端点击反馈：去掉浏览器默认的蓝色高亮块（点菜单按钮 / 常见问题时会闪一下） */
 a, button, summary { -webkit-tap-highlight-color: transparent; }
 
-html { scroll-behavior: smooth; }
+/* 预留滚动条槽位 + 默认透明细体滚动条（滚动或鼠标贴近右边缘时显现） */
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color .25s ease;
+}
+html.is-scrolling,
+html.near-scrollbar {
+  scrollbar-color: rgba(154, 166, 194, 0.35) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 9999px;
+  transition: background-color .25s ease;
+}
+html.is-scrolling::-webkit-scrollbar-thumb,
+html.near-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(154, 166, 194, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(154, 166, 194, 0.55) !important;
+}
 
 body {
   font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -290,8 +325,26 @@ img { max-width: 100%; display: block; }
 .dl__qrwrap:hover .dl__qr, .dl__qrwrap:focus-within .dl__qr {
   opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
 }
-/* 网盘按钮仅为悬停触发二维码，不可点击 */
+/* 非链接的纯扫码触发按钮显示默认指针 */
 .dl__qrwrap .dl__plat { cursor: default; }
+/* 移动端 / 无悬停设备：直接展示二维码图片，不依赖 hover */
+@media (max-width: 920px), (hover: none) {
+  .dl__platforms { flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+  .dl__qrwrap { flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+  .dl__qrwrap .dl__plat { display: none; }
+  .dl__qr {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none !important;
+    width: 210px;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,.32);
+  }
+}
 /* AI 字幕资源（语音模型 / 识别引擎）下载块 */
 .dl-res {
   max-width: var(--maxw); margin: 26px auto 0;
